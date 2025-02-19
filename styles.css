@@ -204,15 +204,18 @@ p {
     --opacity: 56%;
     --tint-color: 255, 255, 255; /* White tint */
     --mask-angle: -180deg;
+
+
     
     position: absolute;
-    bottom: 0; /* Moves it to the bottom */
-    left: 0;
+    bottom: 0;
     width: 100%;
-    height: 25%; /* Covers only the bottom part */
+    height: 25%; 
     
     background-color: rgba(var(--tint-color), var(--opacity));
+
     -webkit-backdrop-filter: blur(var(--blur-amount)) saturate(1);
+    
     backdrop-filter: blur(var(--blur-amount)) saturate(1);
     
     mask-image: linear-gradient(var(--mask-angle), transparent, rgba(0, 0, 0, 1) 100%);
