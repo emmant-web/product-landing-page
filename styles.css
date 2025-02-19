@@ -1,0 +1,239 @@
+/* FONTS: San Francisco */
+
+/* regular */
+@font-face {
+    font-family: 'San Francisco';
+    src: url('./fonts/SFPRODISPLAY-REGULAR.OTF') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* bold */
+@font-face {
+    font-family: 'San Francisco';
+    src: url('./fonts/SFPRODISPLAY-BOLD.OTF') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* medium */
+@font-face {
+    font-family: 'San Francisco';
+    src: url('./fonts/SFPRODISPLAY-MEDIUM.OTF') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* black italic */
+@font-face {
+    font-family: 'San Francisco';
+    src: url('./fonts/SFPRODISPLAY-BLACKITALIC.OTF') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+/* heavy italic */
+@font-face {
+    font-family: 'San Francisco';
+    src: url('./fonts/SFPRODISPLAY-HEAVYITALIC.OTF') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+/* light italic */
+@font-face {
+    font-family: 'San Francisco';
+    src: url('./fonts/SFPRODISPLAY-LIGHTITALIC.OTF') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+/* semi bold italic */
+@font-face {
+    font-family: 'San Francisco';
+    src: url('./fonts/SFPRODISPLAY-SEMIBOLDITALIC.OTF') format('opentype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+/* thin italic */
+@font-face {
+    font-family: 'San Francisco';
+    src: url('./fonts/SFPRODISPLAY-THINITALIC.OTF') format('opentype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+/* ultra light italic */
+@font-face {
+    font-family: 'San Francisco';
+    src: url('./fonts/SFPRODISPLAY-ULTRALIGHTITALIC.OTF') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+
+body {
+    font-family: 'San Francisco', sans-serif;
+    font-weight: 400; /* Regular */
+}
+
+/* Example Usage */
+h1 {
+    font-family: 'San Francisco', sans-serif;
+    font-weight: 700; /* Bold */
+}
+
+p {
+    font-family: 'San Francisco', sans-serif;
+    font-weight: 300; /* Light */
+    font-style: italic;
+}
+
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+/* NAV-BAR */
+
+#header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background-color: #e8e8ed80;
+
+    padding: 0.625rem 0.825rem;
+    position: fixed;
+    border-radius: 1.875rem;
+    z-index: 1000;
+}
+
+
+#header-img{
+    width: 1.2rem;
+    height: auto
+}
+
+
+/* 
+#header-logo-text{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-size: 1.5rem;
+} */
+
+
+#nav-bar{
+    display: flex;
+    gap: 2.3rem;
+}
+
+
+#nav-bar ul a{
+    text-decoration: none;
+    color: black;
+   
+}
+
+#nav-bar-button{
+    background: #0071e3;
+    border: none;
+    border-radius: 20px;
+    padding: 0.625rem 1rem;
+
+}
+
+#nav-bar-button a{
+    text-decoration: none;
+    color: white;
+}
+
+
+/* HERO SECTION */
+
+.hero{
+    width: 100%;
+    height: 100vh;
+    
+    overflow: hidden;   
+    position: relative;
+}
+
+
+
+
+#home-bg-video{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+
+    
+}
+
+.content{
+    position: absolute;
+    bottom: 5rem;
+    left: 3.125rem;
+    z-index: 999;
+}
+
+
+
+.blur-overlay {
+    --blur-amount: 20px;
+    --opacity: 56%;
+    --tint-color: 255, 255, 255; /* White tint */
+    --mask-angle: -180deg;
+    
+    position: absolute;
+    bottom: 0; /* Moves it to the bottom */
+    left: 0;
+    width: 100%;
+    height: 25%; /* Covers only the bottom part */
+    
+    background-color: rgba(var(--tint-color), var(--opacity));
+    -webkit-backdrop-filter: blur(var(--blur-amount)) saturate(1);
+    backdrop-filter: blur(var(--blur-amount)) saturate(1);
+    
+    mask-image: linear-gradient(var(--mask-angle), transparent, rgba(0, 0, 0, 1) 100%);
+}
+
+
+
+
+.content p{
+font-size: 2rem;
+    font-weight: 600;
+    font-style: normal;
+
+}
+
+.content h1{
+    font-size: 5rem;
+    font-weight: 600;
+}
+
+
+
+
+
