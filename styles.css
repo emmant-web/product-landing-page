@@ -459,7 +459,7 @@ font-size: 1.5rem;
     margin-top: 8rem;
  
     text-align: center;
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
 /* GALLERY GRID */
@@ -639,7 +639,7 @@ font-size: 1.5rem;
 .specs-heading {
     text-align: center;
     margin-bottom: 20px;
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
 /* Flexbox for proper two-column alignment */
@@ -756,7 +756,7 @@ font-size: 1.5rem;
 
 .form-div h1{
     padding-top: 5rem;
-    font-size: 5rem;
+    font-size: 4rem;
     text-align: center;
 }
 
