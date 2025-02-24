@@ -87,7 +87,7 @@ h1 {
 p {
     font-family: 'San Francisco', sans-serif;
     font-weight: 300; /* Light */
-    font-style: italic;
+    
 }
 
 
@@ -123,6 +123,8 @@ p {
     position: fixed;
     border-radius: 1.875rem;
     z-index: 1000;
+
+
 }
 
 
@@ -132,13 +134,7 @@ p {
 }
 
 
-/* 
-#header-logo-text{
-    text-decoration: none;
-    color: black;
-    font-weight: 500;
-    font-size: 1.5rem;
-} */
+
 
 
 #nav-bar{
@@ -153,18 +149,33 @@ p {
    
 }
 
-#nav-bar-button{
+/* #nav-bar-button{
     background: #0071e3;
     border: none;
     border-radius: 20px;
     padding: 0.625rem 1rem;
 
+} */
+
+#nav-bar-button {
+    background: #0071e3;
+    border: none;
+    border-radius: 20px;
+    padding: 0.625rem 1rem;
+    white-space: nowrap; /* Prevents line breaks */
+    display: flex;
+    align-items: center; /* Ensures text stays centered */
 }
 
 #nav-bar-button a{
     text-decoration: none;
     color: white;
 }
+
+
+
+
+
 
 
 /* HERO SECTION */
@@ -190,14 +201,8 @@ p {
     
 }
 
-.content{
-    position: absolute;
-    bottom: 5rem;
-    left: 3.125rem;
-    z-index: 999;
-}
 
-
+/* blur behind the text and the blur on top of the video */
 
 .blur-overlay {
     --blur-amount: 20px;
@@ -215,7 +220,7 @@ p {
     background-color: rgba(var(--tint-color), var(--opacity));
 
     -webkit-backdrop-filter: blur(var(--blur-amount)) saturate(1);
-    
+
     backdrop-filter: blur(var(--blur-amount)) saturate(1);
     
     mask-image: linear-gradient(var(--mask-angle), transparent, rgba(0, 0, 0, 1) 100%);
@@ -223,20 +228,694 @@ p {
 
 
 
+.content{
+    position: absolute;
+    bottom: 4rem;
+    left: 3.125rem;
+    z-index: 999;
+}
 
 .content p{
-font-size: 2rem;
+font-size: 1.5rem;
     font-weight: 600;
     font-style: normal;
 
 }
 
 .content h1{
-    font-size: 5rem;
+    font-size: 4.5rem;
     font-weight: 600;
+}
+
+
+/* HEADPHONES FEATURES */
+
+.headphones-features{
+    width: 70%;
+    margin-inline: auto;
+
+    
+}
+
+#headphones-features-title{
+    text-align: center;
+    font-size: 4.5rem;
+    font-weight: 600;
+
+
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+
+.active-noise-cancellation, .transparency-mode{
+    display: flex;
+    gap: 3rem;
+
+    margin-bottom: 3rem;
+    
+}
+
+.anc-pic img, .transparency-pic img{
+    width: 30rem;
+    height: auto;
+}
+
+.anc-p, .transparency-p{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 70%;
+    
+    font-family: "San Francisco";
+    font-style: normal;
+}
+
+.anc-p img, .transparency-p img{
+    width: 8%;
+}
+
+.anc-p p, .transparency-p img{
+    font-size: 1.3125rem;
+}
+
+
+
+
+.transparency-mode{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+
+
+
+.transparency-p p{
+    font-size: 1.3125rem;
+}
+
+
+/* media queries for tablets */
+
+@media screen and (max-width: 835px) {
+    .headphones-features {
+        width: 100%; /* Use full width */
+        padding: 0 1rem; /* Add some padding */
+    }
+    
+    .active-noise-cancellation, .transparency-mode {
+        flex-direction: column; /* Stack elements */
+        align-items: center;
+        text-align: center;
+    }
+    
+    .anc-pic img, .transparency-pic img {
+        width: 18rem; /* Scale down images */
+    }
+    
+    .anc-p, .transparency-p {
+        width: 90%; /* Better text alignment */
+    }
+    
+    #headphones-features-title {
+        font-size: 2.5rem; /* Reduce title size */
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+}
+
+
+
+/* OVERVIEW VIDEO SECTION */
+
+
+.video-section {
+    position: relative;
+    width: 80%; /* Adjust percentage as needed, less than 100% */
+    max-width: 800px; /* Optional: Set a maximum width in pixels or rem */
+    margin: 20px auto; /* Center the video horizontally and add some top/bottom margin */
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+  }
+  
+  .video-section iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+
+
+  /* OVERVIEW EMAIL SECTION */
+
+  .email-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    height: 25rem; /* Adjust as needed */
+    background-color: #f5f5f7; /* Light Apple-style background */
+    padding: 20px;
+    margin-top: 5.25rem;
+    margin-bottom: 5.25rem;
+
+    width: 60%;
+    margin-inline: auto;
+    border-radius: 12px; /* Smooth rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.email-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 80%;
+    max-width: 25rem; /* Prevents form from stretching too wide */
+}
+
+.email-section label {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1d1d1f; /* Apple’s dark text color */
+    text-align: center;
+   
+}
+
+
+.email-section p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+
+.email-section input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s ease-in-out;
+    font-family: "San Francisco";
+}
+
+.email-section input[type="email"]:focus {
+    border-color: #0071e3; /* Apple blue */
+}
+
+.email-section input[type="submit"] {
+    font-family: "San Francisco";
+    background-color: #0071e3; /* Apple blue */
+    color: white;
+    font-size: 16px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.email-section input[type="submit"]:hover {
+    background-color: #005bb5; /* Darker blue for hover effect */
 }
 
 
 
 
 
+/* GALLERY */
+
+
+#gallery-title{
+    margin-top: 8rem;
+ 
+    text-align: center;
+    font-size: 3rem;
+}
+
+/* GALLERY GRID */
+
+/* ONE IMAGE ON THE LEFT AND FOUR IMAGES ON THE RIGHT */
+
+.image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Equal 50% width for both sides */
+    gap: 10px;
+    max-width: 1000px;
+    margin: auto;
+    align-items: stretch; /* Ensures both sides are the same height */
+    margin-top: 5rem;
+}
+
+.left-image,
+.right-images {
+    display: flex;
+    flex-direction: column;
+}
+
+.left-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the space evenly */
+    border-radius: 8px;
+}
+
+.right-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+    grid-template-rows: repeat(2, 1fr); /* 2 rows */
+    gap: 10px;
+    height: 100%; /* Matches left image height */
+}
+
+.right-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images fill their grid cells */
+    border-radius: 8px;
+}
+
+
+/* FOUR IMAGES ON THE LEFT AND ONE IMAGE ON THE RIGHT */
+
+.flipped-image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-width: 1000px;
+    margin: auto;
+    align-items: stretch;
+    margin-top: 5rem;
+}
+
+.left-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    height: 100%;
+}
+
+.left-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.right-image {
+    display: flex;
+}
+
+.right-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.image-grid:last-of-type {
+    margin-bottom: 5rem;
+}
+
+
+
+/* responsiveness for gallery */
+
+/* 📱 Responsive for Tablets */
+@media (max-width: 835px) {
+    .image-grid{
+        grid-template-columns: 1fr;
+        width: 80%;
+    }
+
+    .flipped-image-grid{
+        display: flex;
+        flex-direction: column-reverse;
+        width: 80%;
+    }
+
+    .left-image,
+    .right-image {
+        width: 100%;
+    }
+
+    .right-images,
+    .left-images {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+}
+
+
+
+
+
+/* SPECS */
+
+/* Divider line - Centered */
+.specs-divider {
+    width: 80%;
+    height: 1px;
+    background-color: #ccc;
+    margin: 30px auto; /* Centers the divider */
+}
+
+/* Body styles */
+.specs-body {
+    font-family: "San Francisco";
+    
+    background-color: #f8f8f8;
+}
+
+/* Header styles */
+.specs-header {
+    text-align: center;
+    padding: 20px;
+    background-color: #e5e5e5;
+}
+
+.specs-title {
+    font-size: 2rem;
+}
+
+/* Product images container */
+.specs-product-images {
+    display: flex;
+    justify-content: center;
+   
+    gap: 20px;
+    padding: 20px;
+}
+
+.specs-image {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Main specs container - Centers everything */
+.specs-container {
+    width: 80%;
+    margin: auto;
+    text-align: center; /* Centers text inside */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers everything inside */
+
+    margin-top: 8rem;
+}
+
+/* Section heading */
+.specs-heading {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+
+/* Flexbox for proper two-column alignment */
+.specs-category {
+    width: 80%; /* Same width as specs-divider */
+    margin: 0 auto 20px auto; /* Centers the section */
+    display: flex;
+    justify-content: space-between; /* Keeps content evenly spaced */
+    gap: 5rem; /* Keeps spacing */
+    align-items: flex-start; /* Aligns content properly */
+    text-align: left; /* Keeps text format natural */
+}
+
+/* Ensures headings align properly */
+.specs-subheading {
+    font-size: 1.2rem;
+    font-weight: bold;
+    min-width: 200px; /* Keeps all headings the same width */
+}
+
+/* Keeps lists aligned properly */
+.specs-list {
+    list-style: none;
+    padding-left: 0;
+    flex-grow: 1; /* Ensures the list takes up remaining space */
+}
+
+/* Proper indentation */
+.specs-item {
+    padding-left: 20px;
+    text-indent: -20px;
+    position: relative;
+}
+
+/* Bullet styling */
+.specs-item::before {
+    color: #0071e3;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.specs-category:last-of-type {
+    margin-bottom: 5rem;
+}
+
+
+
+/* media queries for specs */
+
+@media (max-width: 835px) {
+    .specs-product-images {
+        flex-direction: column; /* Stack images */
+        align-items: center; /* Center images */
+    }
+
+    .specs-image {
+        max-width: 100%; /* Allow full width */
+    }
+
+    .specs-category {
+        flex-direction: column; /* Stack specs list */
+        align-items: center; /* Center content */
+        text-align: center; /* Align text */
+        gap: 2rem;
+    }
+
+    .specs-subheading {
+        min-width: auto; /* Remove fixed width */
+    }
+
+    .specs-list {
+        text-align: left; /* Keep text readable */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* PRE ORDER */
+
+.form-div{
+    margin-top: 7rem;
+    margin-bottom: 5em;
+    /* padding-bottom: ; */
+
+    /* background-color: white; */
+    background-color: #F5F5F7;
+    /* background-color: red; */
+    border-radius: 1.25rem;
+
+    width: 80%;
+    margin-inline: auto;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-div h1{
+    padding-top: 5rem;
+    font-size: 5rem;
+    text-align: center;
+}
+
+
+
+
+.slideshow-container{
+    width: 60rem;
+    height: 25rem;
+    margin-inline: auto;
+    margin-top: 2rem;
+
+    position: relative;
+    overflow: visible;
+}
+
+.slide{
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+
+    position: absolute;
+    opacity: 0; /* Start hidden */
+    animation: snappySwitch 6s infinite;
+}
+
+.slide img{
+    width: 60rem;
+    height: auto;
+    border-radius: 1.25rem;
+}   
+
+
+
+/* Animation */
+@keyframes snappySwitch {
+    0% { opacity: 1; }
+    19.9% { opacity: 1; }  /* Keep the image visible */
+    20% { opacity: 0; }    /* Instantly switch */
+    100% { opacity: 0; }
+}
+
+
+/* Set animation delays so they cycle correctly */
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 1s; }
+.slide:nth-child(3) { animation-delay: 2s; }
+.slide:nth-child(4) { animation-delay: 3s; }
+.slide:nth-child(5) { animation-delay: 4s; }
+.slide:nth-child(6) { animation-delay: 5s; }
+
+
+
+
+.form-section{
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 3rem;
+
+    padding-bottom: 3rem;
+    
+   
+}
+
+#pre-order-fillup{
+    width: 60rem;
+    margin-inline: auto;
+
+}
+
+
+#pre-order-fillup label{
+    font-size: 1.2em;
+}
+
+
+#name, #email, #comments-textarea{
+    width: 60rem;
+    margin-bottom: 2rem;
+
+    padding: 15px;
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    font-size: 1rem;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+#comments-textarea{
+    height: 15rem;
+    font-family: "San Francisco";
+}
+
+label{
+    font-family: "San Francisco";
+    font-weight: 500;
+}
+
+#name, #email, #comments-textarea{
+    font-family: "San Francisco";
+    margin-top: 0.5rem;
+}
+
+
+#submit-button{
+    background: #0071e3;
+    color: white;
+    width: 60rem;
+    margin-bottom: 2rem;
+    font-family: "San Francisco";
+    font-weight: 700;
+
+    
+    padding: 15px;
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    font-size: 1rem;
+  
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;   
+    
+
+}
+
+/* media queries for preorder */
+
+@media (max-width: 835px) {
+    .form-div {
+        width: 90%;
+        padding: 2rem;
+    }
+
+    .form-div h1 {
+        font-size: 3.5rem;
+        padding-top: 3rem;
+    }
+
+    .slideshow-container {
+        width: 90%;
+        height: auto;
+        margin-bottom: 3rem; /* Pushes form down */
+    }
+
+    .slide img {
+        width: 100%;
+        height: auto;
+    }
+
+    .form-section {
+        margin-top: 20rem; /* More space between slideshow and form */
+    }
+
+    #pre-order-fillup {
+        width: 90%;
+    }
+
+    #name, #email, #comments-textarea, #submit-button {
+        width: 100%;
+    }
+}
