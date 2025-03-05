@@ -127,11 +127,11 @@ p {
 
 }
 
-
+/* 
 #header-img{
     width: 1.2rem;
     height: auto
-}
+} */
 
 
 
@@ -143,11 +143,11 @@ p {
 }
 
 
-#nav-bar ul a{
+/* #nav-bar ul a{
     text-decoration: none;
     color: black;
    
-}
+} */
 
 /* #nav-bar-button{
     background: #0071e3;
@@ -441,9 +441,9 @@ font-size: 1.5rem;
     border-color: #0071e3; /* Apple blue */
 }
 
-.email-section input[type="submit"] {
+/* .email-section input[type="submit"] {
     font-family: "San Francisco";
-    background-color: #0071e3; /* Apple blue */
+    background-color: #0071e3; 
     color: white;
     font-size: 16px;
     padding: 12px;
@@ -451,11 +451,11 @@ font-size: 1.5rem;
     border-radius: 8px;
     cursor: pointer;
     transition: background 0.3s ease-in-out;
-}
+} */
 
-.email-section input[type="submit"]:hover {
-    background-color: #005bb5; /* Darker blue for hover effect */
-}
+/* .email-section input[type="submit"]:hover {
+    background-color: #005bb5;
+} */
 
 
 

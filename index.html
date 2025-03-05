@@ -6,12 +6,12 @@
     <title>AirPods Max - Apple</title>
     <link rel="stylesheet" href="./styles.css">
     <link rel="icon" type="image/x-icon" href="./img/apple-favicon.png">
+    <script src="script.js" defer></script>
 </head>
 <body>
     
     <header id="header">
       <a href="index.html"><img src="./img/apple-logo-black.svg" id="header-img" /></a> 
-
 
 
 
@@ -28,7 +28,7 @@
 
         <video autoplay muted loop id="home-bg-video">
             <source src="./vids/airpods-max-loop-video.mp4" type="video/mp4">
-            Your browswer does not support the video tag
+            Your browser does not support the video tag
         </video>
 
         <div class="blur-overlay"></div> <!-- Apple's Blur Effect -->
@@ -108,11 +108,11 @@
 
   <!-- Email Subscription Section -->
 <div class="email-section">
-    <form method="get">
-        <label for="email-input">Newsletter for Apple Products!</label>
+    <form id="email-newsletter" method="get">
+        <label id="apple-newsletter-label" for="email-input">Newsletter for Apple Products!</label>
         <p>Sign up to receive the latest news, updates, and exclusive offers on Apple products.</p>
-        <input type="email" name="email" id="email-input" placeholder="apple@gmail.com">
-        <input type="submit" value="Subscribe">
+        <input type="email" name="email" id="email-input" placeholder="apple@gmail.com" required>
+        <!-- <input type="submit" value="Subscribe"> -->
     </form>
 </div>
 
